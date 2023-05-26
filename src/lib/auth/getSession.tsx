@@ -19,6 +19,4 @@ export default server$(async (event: RequestEventLoader) => {
         });
         return null;
     }
-
-
 })
