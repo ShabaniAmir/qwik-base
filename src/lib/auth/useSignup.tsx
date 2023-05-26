@@ -5,6 +5,13 @@ import prisma from "~/util/db";
 import bcrypt from "bcrypt";
 import Jwt from "jsonwebtoken";
 import { Session } from "./getSession";
+
+/**
+ * Represents a global action that creates a new user with the provided email and hashed password.
+ * @param data - The user data object containing email and password.
+ * @param event - The event object containing environment variables and cookies.
+ * @returns An object indicating the success of the action.
+ */
 export default globalAction$(async (data, event) => {
     const email = data.email;
     const password = await bcrypt.hash(data.password, 10);

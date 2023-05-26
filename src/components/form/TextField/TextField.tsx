@@ -1,11 +1,34 @@
 import { component$, useSignal } from "@builder.io/qwik";
 
+/**
+ *
+ * Represents the props for the TextField component.
+ */
 interface TextFieldProps {
+  /*
+   * The type of the input field.
+   * Can be one of "text", "email", "password", "number", "tel", or "url". */
   type?: "text" | "email" | "password" | "number" | "tel" | "url";
+  /*
+   * The label for the input field.
+   */
   label?: string;
+  /*
+   * The name of the input field.
+   */
   name?: string;
+  /*
+   * The error message to display for the input field.
+   */
   error?: string;
 }
+/**
+
+A custom TextField component.
+Renders an input field with an optional label and error message.
+@param props - The TextFieldProps object containing the component's props.
+@returns The rendered TextField component.
+*/
 export default component$((props: TextFieldProps) => {
   const isActive = useSignal(false);
   const inputRef = useSignal<HTMLInputElement>();

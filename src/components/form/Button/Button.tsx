@@ -1,6 +1,10 @@
 import { Slot, component$ } from "@builder.io/qwik";
 import { tv } from "tailwind-variants";
+/**
 
+Represents the variants for the button component.
+@const buttonVariants - Object with button variants.
+*/
 const buttonVariants = tv({
   base: "py-3 px-5 transition-all ease-in-out text-slate-800 duration-200 rounded-md shadow-md bg-slate-300 hover:bg-slate-200 hover:shadow-lg active:shadow-sm active:bg-slate-400",
   variants: {
@@ -13,6 +17,14 @@ const buttonVariants = tv({
   },
 });
 
+/**
+
+Represents a Button component.
+@component$
+@param {Object} props - The props for the Button component.
+@param {string} [props.color] - The color variant for the button.
+@returns {JSX.Element} - The rendered Button component.
+*/
 const Button = component$(
   (props: { color?: keyof typeof buttonVariants.variants.color }) => {
     return (

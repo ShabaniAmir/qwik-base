@@ -4,6 +4,16 @@ import prisma from "~/util/db";
 import bcrypt from "bcrypt";
 import Jwt from "jsonwebtoken";
 import { Session } from "./getSession";
+
+/**
+ * Authenticates a user and generates a JWT token for session management.
+ *
+ * @param data - The data object containing user credentials.
+ * @param event - The event object representing the current request.
+ * @returns A Promise resolving to an object indicating the authentication result.
+ *          - If authentication is successful, the object will have a `success` property set to `true`.
+ *          - If authentication fails, the object will contain error details.
+ */
 export default globalAction$(async (data, event) => {
 
     const user = await prisma.user.findUnique({
