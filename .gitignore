@@ -4,6 +4,8 @@
 /lib-types
 /server
 
+/prisma/db/*
+
 # Development
 node_modules
 *.local
