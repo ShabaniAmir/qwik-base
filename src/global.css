@@ -39,44 +39,8 @@ body {
   letter-spacing: 2pt !important;
   font-size: 14px;
   line-height: 1.5rem;
+  @apply underline-offset-4
 }
 button {
   letter-spacing: 2pt !important;
 }
-
-
-@layer components {
-.btn {
-    @apply px-5 py-3;
-    @apply rounded-md;
-    @apply shadow;
-    @apply transition-all duration-200;
-    @apply text-sm;
-  }
-}
-
-
-@layer utilities {
-  
-}
-
-/* 
-
-.standard {
-@apply bg-slate-200 text-slate-900
-}
-
-.btn.standard {
-  @apply  hover:bg-slate-100 hover:shadow-md active:bg-slate-300 active:shadow-sm ;
-}
-
-.primary {
-  @apply bg-slate-700 text-white;
-}
-.btn.primary {
-  @apply hover:bg-slate-600 hover:shadow-md active:bg-slate-800 active:shadow-sm; 
-}
-
-.btn.warning {
-  @apply bg-yellow-500 hover:bg-yellow-400 hover:shadow-md active:bg-yellow-600 active:shadow-sm ; 
-} */

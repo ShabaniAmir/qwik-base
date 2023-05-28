@@ -48,6 +48,7 @@
     "vite-tsconfig-paths": "4.2.0"
   },
   "dependencies": {
+    "@qwikest/icons": "^0.0.8",
     "bcrypt": "^5.1.0",
     "jsonwebtoken": "^9.0.0",
     "tailwind-variants": "^0.1.5"

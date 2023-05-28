@@ -4,7 +4,16 @@ import { Button, TextField } from "~/components/form";
 import useSignin from "~/lib/auth/useSignin";
 
 export const useCallbackUrl = routeLoader$((event) => {
-  return event.query.get("callback");
+  const callback = event.query
+    .get("callback")
+    ?.split("/")
+    .filter((x) => x && !x.includes("."));
+  console.log({
+    original: event.query.get("callback"),
+    callback,
+    final: "/" + callback?.join("/") || "/",
+  });
+  return "/" + callback?.join("/") || "/";
 });
 
 export default component$(() => {

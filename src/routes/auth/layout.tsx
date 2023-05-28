@@ -11,9 +11,16 @@ export const useRouteLoader = routeLoader$(async (event) => {
       .filter((item) => item !== "")
       .slice(-1)[0] !== "signout"
   ) {
-    const callBack = event.query.get("callback");
-    if (callBack) {
-      event.redirect(302, callBack);
+    const callback =
+      "/" +
+      event.query
+        .get("callback")
+        ?.split("/")
+        .filter((x) => x && !x.includes("."))
+        .join("/");
+
+    if (callback) {
+      event.redirect(302, callback);
       return;
     }
 
